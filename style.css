@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  font-family: "Red Hat Text", sans-serif;
+  color: white;
+}
+
+body {
+  background-image: url("./images/pattern-hills.svg"), url("./images/bg-stars.svg"), linear-gradient(#1f1e27, #211b28);
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+@media (min-width: 1440px) {
+  body {
+    background-size: contain;
+  }
+}
+
+.main-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.main-wrapper .wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 30px;
+}
+.main-wrapper .header {
+  text-transform: uppercase;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 6px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+.main-wrapper .card-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+@media (min-width: 1440px) {
+  .main-wrapper .card-wrapper {
+    gap: 22px;
+  }
+}
+.main-wrapper .card-wrapper .card {
+  position: relative;
+}
+.main-wrapper .card-wrapper .card .card-text {
+  min-width: 70px;
+  text-align: center;
+  border-radius: 5px;
+  padding: 17px 22px;
+  font-size: 40px;
+  font-weight: 700;
+  color: #f65d86;
+  background: linear-gradient(to top, #30394d 48%, #2c2d43 55%);
+  box-shadow: 0px 6px 0px 0px #181a24;
+}
+@media (min-width: 768px) {
+  .main-wrapper .card-wrapper .card .card-text {
+    font-size: 48px;
+  }
+}
+@media (min-width: 1440px) {
+  .main-wrapper .card-wrapper .card .card-text {
+    padding: 30px 33px;
+    font-size: 70px;
+  }
+}
+.main-wrapper .card-wrapper .card .card-subtitle {
+  color: #8486a9;
+  letter-spacing: 4px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 10px;
+  padding-top: 20px;
+}
+.main-wrapper .card-wrapper .card::after {
+  right: 0px;
+  transform: rotate(180deg);
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+.nav .nav-link {
+  cursor: pointer;
+  list-style-type: none;
+}
+
+.semi-circle, .main-wrapper .card-wrapper .card::before, .main-wrapper .card-wrapper .card::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 12px;
+  background-color: #181a24;
+  top: 34px;
+  border-radius: 0 20px 20px 0;
+}
+@media (min-width: 1440px) {
+  .semi-circle, .main-wrapper .card-wrapper .card::before, .main-wrapper .card-wrapper .card::after {
+    top: 59px;
+    width: 9px;
+    height: 16px;
+  }
+}/*# sourceMappingURL=style.css.map */
