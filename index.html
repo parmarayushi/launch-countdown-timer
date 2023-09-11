@@ -4,21 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
-
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <!-- links of styles.css file -->
     <link rel="stylesheet" href="style.css" />
-    <title>Frontend Mentor | Launch countdown timer</title>
+
+    <!-- link of "Red Hat Text" google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Red+Hat+Text:wght@400;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- title to be displayed on the browser tab -->
+    <title>Frontend Mentor | Launch countdown timer</title>
+
+    <!-- start: script to do countdown -->
     <script>
       // Set the date we're counting down to
       var countDownDate = new Date("Sept 10, 2024 15:37:25").getTime();
@@ -46,32 +52,55 @@
         document.getElementById("seconds").innerHTML = seconds;
       }, 1000);
     </script>
+    <!-- end: script to do countdown -->
   </head>
+
   <body>
     <main class="main-wrapper">
+      <!-- start: timer clock section -->
       <section class="wrapper">
+        <!-- start: header -->
         <div class="header">We're launching soon</div>
+        <!-- end: header -->
+
+        <!-- start: timer cards -->
         <div class="card-wrapper">
+          <!-- start: days -->
           <div class="card">
             <div class="card-text" id="days">08</div>
             <p class="card-subtitle">Days</p>
           </div>
+          <!-- end: days -->
+
+          <!-- start: hours -->
           <div class="card">
             <div class="card-text" id="hours">23</div>
             <p class="card-subtitle">hours</p>
           </div>
+          <!-- end: hours -->
+
+          <!-- start: minutes -->
           <div class="card">
             <div class="card-text" id="minutes">55</div>
             <p class="card-subtitle">minutes</p>
           </div>
+          <!-- end: minutes -->
+
+          <!-- start: seconds -->
           <div class="card">
             <div class="card-text" id="seconds">41</div>
             <p class="card-subtitle">seconds</p>
           </div>
+          <!-- end: seconds -->
         </div>
+        <!-- end: timer cards -->
       </section>
+      <!-- end: timer clock section -->
+
+      <!-- start: timer clock footer -->
       <footer>
         <ul class="nav">
+          <!-- start: facebook link -->
           <li class="nav-link">
             <a href="" class="nav-item">
               <svg
@@ -88,6 +117,9 @@
               </svg>
             </a>
           </li>
+          <!-- end: facebook link -->
+
+          <!-- start: pinterest link -->
           <li class="nav-link">
             <a href="" class="nav-item">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
@@ -99,6 +131,9 @@
               </svg>
             </a>
           </li>
+          <!-- end: pinterest link -->
+
+          <!-- start: instagram link -->
           <li class="nav-link">
             <a href="" class="nav-item">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
@@ -110,10 +145,10 @@
               </svg>
             </a>
           </li>
+          <!-- end: instagram link -->
         </ul>
       </footer>
-
-      <div class="clock" id="clock1"></div>
+      <!-- end: timer clock footer -->
     </main>
   </body>
 </html>
