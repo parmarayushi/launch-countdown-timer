@@ -1,4 +1,4 @@
-const countDownDate = new Date("dec 24, 2024 12:10:00").getTime();
+const countDownDate = new Date("dec 21, 2024 12:10:00").getTime();
 setInterval(function () {
   // Get today's date and time
   const currentDate = new Date().getTime();
@@ -12,12 +12,14 @@ setInterval(function () {
 /** function to flip all the cards  */
 function flipAllCards(distance) {
   /** Calculate days, hours, minutes, seconds */
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor(
-    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  const days = Math.abs(Math.floor(distance / (1000 * 60 * 60 * 24)));
+  const hours = Math.abs(
+    Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
   );
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  const minutes = Math.abs(
+    Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+  );
+  const seconds = Math.abs(Math.floor((distance % (1000 * 60)) / 1000));
 
   /** flip the selectors */
   flip(document.querySelector("[data-days]"), days);
