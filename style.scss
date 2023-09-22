@@ -6,19 +6,15 @@
 body,
 html {
   height: 100%;
-  font-family: "Red Hat Text", sans-serif;
-  color: white;
+  width: 100%;
 }
 
 body {
+  font-family: "Red Hat Text", sans-serif;
   background-image: url("./images/pattern-hills.svg"),
     url("./images/bg-stars.svg"), linear-gradient(#1f1e27, #211b28);
   background-repeat: no-repeat;
   background-position: bottom;
-
-  @media (min-width: 1440px) {
-    background-size: contain;
-  }
 }
 
 .main-wrapper {
@@ -42,6 +38,7 @@ body {
     letter-spacing: 6px;
     padding-bottom: 60px;
     text-align: center;
+    color: white;
   }
 
   .card-wrapper {
@@ -49,41 +46,73 @@ body {
     justify-content: center;
     gap: 10px;
 
-    @media (min-width: 1440px) {
-      gap: 22px;
-    }
-    .card {
+    .flip-card {
       position: relative;
+      display: inline-flex;
+      flex-direction: column;
+      color: #f65d86;
+      font-size: 26px;
+      font-weight: 700;
+      min-width: 40px;
+      width: 80px;
+      box-shadow: 0px 8px 0px 0px #181a24;
 
-      .card-text {
-        min-width: 40px;
-        width: 62px;
-        height: 50px;
-        border-radius: 5px;
+      .top,
+      .bottom,
+      & .top-flip,
+      & .bottom-flip {
         display: flex;
         justify-content: center;
-        align-items: center;
-        padding: 8px;
-        font-size: 26px;
-        font-weight: 700;
-        color: #f65d86;
-        background: linear-gradient(to top, #30394d 48%, #2c2d43 55%);
-        box-shadow: 0px 8px 0px 0px #181a24;
+        line-height: 1;
+        height: 1px;
+        padding: 12px;
+        overflow: hidden;
+      }
 
-        @media (min-width: 768px) {
-          padding: 17px 22px;
-          height: auto;
-          min-width: 100px;
-          font-size: 48px;
-        }
+      .top,
+      & .top-flip {
+        background-color: #30394d;
+        border-radius: 5px 5px 0px 0px;
+      }
 
-        @media (min-width: 1440px) {
-          padding: 30px 33px;
-          font-size: 70px;
+      .bottom,
+      & .bottom-flip {
+        background-color: #2c2d43;
+        display: flex;
+        align-items: flex-end;
+        border-radius: 0px 0px 5px 5px;
+        // box-shadow: 0px 8px 0px 0px #181a24;
+      }
+
+      & .top-flip {
+        position: absolute;
+        min-width: 56.3px;
+        animation: flip-top 500ms ease-in;
+        transform-origin: bottom center;
+      }
+
+      @keyframes flip-top {
+        100% {
+          transform: rotateX(90deg);
         }
       }
 
-      .card-subtitle {
+      & .bottom-flip {
+        position: absolute;
+        bottom: 0;
+        min-width: 56.3px;
+        animation: flip-bottom 500ms ease-out 500ms;
+        transform-origin: top;
+        transform: rotateX(90deg);
+      }
+
+      @keyframes flip-bottom {
+        100% {
+          transform: rotateX(0deg);
+        }
+      }
+
+      ~ .card-subtitle {
         color: #8486a9;
         letter-spacing: 4px;
         text-align: center;
@@ -131,15 +160,75 @@ body {
   width: 5px;
   height: 10px;
   background-color: #181a24;
-  top: 26px;
+  top: 22px;
   border-radius: 0 20px 20px 0;
-  @media (min-width: 768px) {
-    width: 6px;
-    height: 12px;
-    top: 41px;
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .main-wrapper {
+    .card-wrapper {
+      .flip-card {
+        min-width: 135px;
+        font-size: 48px;
+        .top,
+        .bottom,
+        .top-flip,
+        .bottom-flip {
+          height: 6px;
+          padding: 18px;
+        }
+
+        .top-flip {
+          min-width: 98.5px;
+        }
+
+        .bottom-flip {
+          min-width: 98.5px;
+        }
+      }
+
+      .semi-circle {
+        width: 6px;
+        height: 12px;
+        top: 36px;
+      }
+    }
   }
-  @media (min-width: 1440px) {
-    top: 63px;
+}
+
+@media (min-width: 1024px) {
+  body {
+    background-size: contain;
+  }
+
+  .main-wrapper {
+    .card-wrapper {
+      gap: 22px;
+      .flip-card {
+        min-width: 170px;
+        font-size: 70px;
+        .top,
+        .bottom,
+        .top-flip,
+        .bottom-flip {
+          height: 17px;
+          padding: 18px;
+        }
+
+        .top-flip {
+          min-width: 134px;
+        }
+
+        .bottom-flip {
+          min-width: 134px;
+        }
+      }
+    }
+  }
+
+  .semi-circle {
+    top: 47px;
     width: 9px;
     height: 16px;
   }

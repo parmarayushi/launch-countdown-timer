@@ -20,39 +20,8 @@
       href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Red+Hat+Text:wght@400;700&display=swap"
       rel="stylesheet"
     />
-
     <!-- title to be displayed on the browser tab -->
     <title>Frontend Mentor | Launch countdown timer</title>
-
-    <!-- start: script to do countdown -->
-    <script>
-      // Set the date we're counting down to
-      var countDownDate = new Date("Sept 10, 2024 15:37:25").getTime();
-
-      // Update the count down every 1 second
-      var x = setInterval(function () {
-        // Get today's date and time
-        var now = new Date().getTime();
-
-        // Find the distance between now and the count down date
-        var distance = countDownDate - now;
-
-        // Time calculations for days, hours, minutes and seconds
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor(
-          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        );
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        // Display the result in the element with id="demo"
-        document.getElementById("days").innerHTML = days;
-        document.getElementById("hours").innerHTML = hours;
-        document.getElementById("minutes").innerHTML = minutes;
-        document.getElementById("seconds").innerHTML = seconds;
-      }, 1000);
-    </script>
-    <!-- end: script to do countdown -->
   </head>
 
   <body>
@@ -66,29 +35,41 @@
         <!-- start: timer cards -->
         <div class="card-wrapper">
           <!-- start: days -->
-          <div class="card">
-            <div class="card-text" id="days">08</div>
+          <div>
+            <div class="flip-card" data-days>
+              <div class="top">00</div>
+              <div class="bottom">00</div>
+            </div>
             <p class="card-subtitle">Days</p>
           </div>
           <!-- end: days -->
 
           <!-- start: hours -->
-          <div class="card">
-            <div class="card-text" id="hours">23</div>
+          <div>
+            <div class="flip-card" data-hours>
+              <div class="top">00</div>
+              <div class="bottom">00</div>
+            </div>
             <p class="card-subtitle">hours</p>
           </div>
           <!-- end: hours -->
 
           <!-- start: minutes -->
-          <div class="card">
-            <div class="card-text" id="minutes">55</div>
+          <div>
+            <div class="flip-card" data-minutes>
+              <div class="top">00</div>
+              <div class="bottom">00</div>
+            </div>
             <p class="card-subtitle">minutes</p>
           </div>
           <!-- end: minutes -->
 
           <!-- start: seconds -->
-          <div class="card">
-            <div class="card-text" id="seconds">41</div>
+          <div>
+            <div class="flip-card" data-seconds>
+              <div class="top">00</div>
+              <div class="bottom">00</div>
+            </div>
             <p class="card-subtitle">seconds</p>
           </div>
           <!-- end: seconds -->
@@ -150,5 +131,6 @@
       </footer>
       <!-- end: timer clock footer -->
     </main>
+    <script src="./script.js"></script>
   </body>
 </html>
